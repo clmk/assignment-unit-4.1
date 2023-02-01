@@ -58,33 +58,30 @@ console.log('The Number -3 is positive or over zero:' , isPositive(-3) );
 
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
-let itemArray = ['quick','brown','fox']
-let emptyArray = '';
-function getLast( array ) {
-  if(array != '') {
-    return array.pop();
-  } else {
-    return `undefined`;
-  }
-}
+function lastItem (listOfItems) {
+  return listOfItems.length ? listOfItems[listOfItems.length - 1] : undefined;
+};
+console.log(lastItem(['1','2','3','4','5','6','7']));
+console.log(lastItem(''));
 
- console.log(getLast ( itemArray));
- console.log(getLast( emptyArray));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
-let fruits = ['apple', 'banana', 'cherry'];
-function find( value, array ){
-  for(fruits of array) {
-    if(fruits === value) {
+function find( value, fruits ){
+  for(let fruit of fruits) {
+    console.log( value, fruit);
+    if(value === fruit) {
+      console.log('Found a Match');
       return true;
+    } else {
+        console.log('Does not Match');
     }
   }
       return false;
 }
-console.log('Is Orange here?', find( 'orange', fruits));
-console.log('Is Banana here?', find( 'banana', fruits));
+console.log('Is Orange here?', find( 'Orange', ['Orange','Strawbery','Peach','Lemon','Tomaote']));
+console.log('Is Banana here?', find( 'Banana', ['Orange','Strawbery','Peach','Lemon','Tomaote']));
 // ----------------------
 // Stretch Goals
 // ----------------------
