@@ -9,57 +9,82 @@ function hello() {
   return 'Hello World!';
 }
 // Call the function to test
-console.log('Test - should say "Hello World!"', hello());
+console.log(hello());
 
 
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName( name ) {
-  return;
+  return `Hello, ${name}!`;
 }
 // Remember to call the function to test
-
+let myName = 'Jo';
+console.log(helloName(myName));
 
 // 3. Function to add two numbers together & return the result
-function addNumbers( firstNumber ) {
-  // return firstNumber + secondNumber;
+let firstNumber = 2;
+let secondNumber = 3;
+let thirdNumber = 1;
+
+function addNumbers() {
+  return firstNumber + secondNumber;
 }
+
+  // return firstNumber + secondNumber;
+  console.log(addNumbers());
 
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree( ){
-
+function multNumbers(){
+  return firstNumber * secondNumber * thirdNumber;
 }
-
+console.log(multNumbers());
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
 function isPositive( number ) {
   if ( number > 0 ){
-    return;
+    return true;
   }
-    return;
+    return false;
 }
+
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
-console.log( 'isPositive - should say true', isPositive(3) );
-console.log( 'isPositive - should say false', isPositive(0) );
-console.log( 'isPositive - should say false', isPositive(-3) );
+console.log('The Number 3 is positive or over zero:' , isPositive(3) );
+console.log('The Number 0 is positive or over zero:' , isPositive(0) );
+console.log('The Number -3 is positive or over zero:' , isPositive(-3) );
 
 
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
+let itemArray = ['quick','brown','fox']
+let emptyArray = '';
 function getLast( array ) {
-
+  if(array != '') {
+    return array.pop();
+  } else {
+    return `undefined`;
+  }
 }
+
+ console.log(getLast ( itemArray));
+ console.log(getLast( emptyArray));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
+let fruits = ['apple', 'banana', 'cherry'];
 function find( value, array ){
-  
+  for(fruits of array) {
+    if(fruits === value) {
+      return true;
+    }
+  }
+      return false;
 }
-
+console.log('Is Orange here?', find( 'orange', fruits));
+console.log('Is Banana here?', find( 'banana', fruits));
 // ----------------------
 // Stretch Goals
 // ----------------------
