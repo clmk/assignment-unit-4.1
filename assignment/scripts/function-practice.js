@@ -18,8 +18,8 @@ function helloName( name ) {
   return `Hello, ${name}!`;
 }
 // Remember to call the function to test
-let myName = 'Jo';
-console.log(helloName(myName));
+
+console.log(helloName());
 
 // 3. Function to add two numbers together & return the result
 let firstNumber = 2;
